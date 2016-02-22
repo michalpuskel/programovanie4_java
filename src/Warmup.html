@@ -6,65 +6,116 @@
 </head>
 <body>
 
-13. Warm-up 01
-1) V ktorých z nasledujúcich možností uvedená konštanta zodpovedá preddefinovanej hodnote daného typu:
+<h1>13. Warm-up 01</h1>
 
-<li>A.    int -> 0</li>
-<li>B.    String -> "null"</li>
-<li>C.    Dog -> null</li>
-<li>D.    char -> '\u0000'</li>
-<li>E.    float -> 0.0f</li>
-<li>F.    boolean -> true</li>
+<ol>
 
---------------------------------------------------
-
-2) Ktoré z nasledujúcich možností predstavujú korektnú deklaráciu premennej typu char:
-
-<li>A.    char c1 = 064770;</li>
-<li>B.    char c2 = 'face';</li>
-<li>C.    char c3 = 0xbeef;</li>
-<li>D.    char c4 = \u0022;</li>
-<li>E.    char c5 = '\iface';</li>
-<li>F.    char c6 = '\uface';</li>
-
---------------------------------------------------
-
-3) Ktoré z nasledujúcich možností predstavujú korektnú deklaráciu premennej typu float:
-
-<li>A.    float f1 = -343;</li>
-<li>B.    float f2 = 3.14;</li>
-<li>C.    float f3 = 0x12345;</li>
-<li>D.    float f4 = 42e7;</li>
-<li>E.    float f5 = 2001.0D;</li>
-<li>F.    float f6 = 2.81F;</li>
+<li>
+    <h3>V ktorých z nasledujúcich možností uvedená konštanta zodpovedá preddefinovanej hodnote daného typu:</h3>
+    <ul>
+        <li>A.    int -> 0</li>
+        ok
+        <li>B.    String -> "null"</li>
+        nie null
+        <li>C.    Dog -> null</li>
+        Dog nie je typ
+        <li>D.    char -> '\u0000'</li>
+        ok
+        <li>E.    float -> 0.0f</li>
+        ok
+        <li>F.    boolean -> true</li>
+        nie false
+    </ul>
+</li>
 
 --------------------------------------------------
 
-4) Ktoré z nasledujúcich možností predstavujú korektnú deklaráciu premennej typu String:
-
-<li>A.     String s1 = null;</li>
-<li>B.     String s2 = 'null';</li>
-<li>C.     String s3 = (String) 'abc';</li>
-<li>D.     String s4 = (String) '\ufeed';</li>
+<li>
+    <h3>Ktoré z nasledujúcich možností predstavujú korektnú deklaráciu premennej typu char:</h3>
+    <ul>
+        <li>A.    char c1 = 064770;</li>
+        ok ak je < 65536 prekonvertuje sa na Unicode znak
+        <li>B.    char c2 = 'face';</li>
+        nie v '' moze byt iba 1 znak
+        <li>C.    char c3 = 0xbeef;</li>
+        ok z hexa sa vyrobi cislo -> znak
+        <li>D.    char c4 = \u0022;</li>
+        nie musi byt v ''
+        <li>E.    char c5 = '\iface';</li>
+        preklep u / i blbost
+        <li>F.    char c6 = '\uface';</li>
+        ok nejaky cisnky znak v Unicode
+    </ul>
+</li>
 
 --------------------------------------------------
 
-5) Ktoré z nasledujúcich možností predstavujú korektnú deklaráciu premennej typu boolean:
-
-<li>A.     boolean b1 = 0;</li>
-<li>B.     boolean b2 = 'false';</li>
-<li>C.     boolean b3 = false;</li>
-<li>D.     boolean b4 = Boolean.false();</li>
-<li>E.     boolean b5 = no;</li>
+<li>
+    <h3>Ktoré z nasledujúcich možností predstavujú korektnú deklaráciu premennej typu float:</h3>
+    <ul>
+        <li>A.    float f1 = -343;</li>
+        ok vyrobi si flota
+        <li>B.    float f2 = 3.14;</li>
+        . literal pre double a doble sa nezmesti  do floatu je 2x viac bitov opacne sa to ale da
+        <li>C.    float f3 = 0x12345;</li>
+        ok vyrobi si
+        <li>D.    float f4 = 42e7;</li>
+        literal pre double chyba
+        <li>E.    float f5 = 2001.0D;</li>
+        literal pre double + aj D
+        <li>F.    float f6 = 2.81F;</li>
+        ok explicitne uvedene F
+    </ul>
+</li>
 
 --------------------------------------------------
 
-6) Numerický interval typu char je:
+<li>
+    <h3>Ktoré z nasledujúcich možností predstavujú korektnú deklaráciu premennej typu String:</h3>
+    <ul>
+        <li>A.     String s1 = null;</li>
+        ok default
+        <li>B.     String s2 = 'null';</li>
+        nie je znak a keby aj bol 1 neda sa precastovat da sa iba "" + 'a' napr
+        <li>C.     String s3 = (String) 'abc';</li>
+        blbost
+        <li>D.     String s4 = (String) '\ufeed';</li>
+        neda sa aj ked je 1 znak
+    </ul>
+</li>
 
-<li>A.     -128 to 127
-<li>B.     -(215) to (215) - 1
-<li>C.     0 to 32767
-<li>D.     0 to 65535
+--------------------------------------------------
+
+<li>
+    <h3>Ktoré z nasledujúcich možností predstavujú korektnú deklaráciu premennej typu boolean:</h3>
+    <ul>
+        <li>A.     boolean b1 = 0;</li>
+        bohuzial v jave nie :(
+        <li>B.     boolean b2 = 'false';</li>
+        nie nie je to ani String
+        <li>C.     boolean b3 = false;</li>
+        ok
+        <li>D.     boolean b4 = Boolean.false();</li>
+        Boolean existuje s konstantou FALSE ale je to trieda a boolean je primitivny typ je to nieco uplne ine....
+        <li>E.     boolean b5 = no;</li>
+        bullshit
+    </ul>
+</li>
+
+--------------------------------------------------
+
+<li>
+    <h3>Numerický interval typu char je:</h3>
+    <ul>
+        <li>A.     -128 to 127</li>
+        <li>B.     -(215) to (215) - 1</li>
+        <li>C.     0 to 32767</li>
+        <li>D.     0 to 65535</li>
+        OK vsetko ostatne je zle
+    </ul>
+</li>
+
+</ol>
 
 
 </body>
